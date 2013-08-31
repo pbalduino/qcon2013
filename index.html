@@ -71,7 +71,7 @@
           <h1>Clo<i>j</i>ure</h1>
           <hr />
           <h3>QCon 2013</h3>
-          <h5>São Paulo - 30/Ago/2013</h5>
+          <h5>São Paulo - 31/Ago/2013</h5>
           <hr />
           <p>
             <a href="http://about.me/pbalduino">Plínio Balduino</a> / <a href="http://twitter.com/p_balduino">@p_balduino</a>
@@ -249,40 +249,97 @@
         </section>
 
         <section>
-        Clojure!
+          <h2>Clo<i>j</i>ure</h2>
+          <hr />
+          <img src="images/clojure.png" height="400">
+        </section>
 
-        JVM (ou CLR)
+        <section>
+          <h2>Clo<i>j</i>ure</h2>
+          <hr />
+          <h3>Integrado à JVM ou CLR</h3>
+          <img src="images/imuttant.png" height="400">
+        </section>
 
-        Imutabilidade
+        <section>
+          <h2>Clo<i>j</i>ure</h2>
+          <hr />
+          <h3>Sintaxe simples</h3>
+          <pre><code>(operador parametro parametro)
 
-        Lento?
+(operador parametro
+         (operador parametro 
+                   parametro))</code></pre>
+        </section>
 
-        Persistent Data Structures
+        <section>
+          <h2>Imutabilidade</h2>
+          <hr />
+          <h3>Thread safe por definição</h3>
+          <img src="images/value-identity-state-and-time.svg" height="400">
+        </section>
+        
+        <section>
+          <h2>E se eu precisar mudar?</h2>
+          <hr />
+          <h3>Transients</h3>
+          <h3>Recursão</h3>
+          <h3><span class="red">VAR</span>s são <i>per thread</i></h3>
+        </section>
 
-        Thread safe
+        <section>
+          <h2>Feito para concorrência</h2>
+          <hr />
+          <h3>Toda função implementa Runnable</h3>
+          <h3>Tipos para (quase) todos os gostos</h3>
+        </section>
 
-        E se eu precisar mudar?
+        <section>
+          <h2>Processamento concorrente</h2>
+          <hr />
+          <h3>Não coordenado e síncrono</h3>
+          <h3><span class="red">Atoms</span></h3>
+          <h4>Pense num contador compartilhado</h4>
+        </section>
 
-        Feito para concorrência
+        <section>
+          <h2>Processamento concorrente</h2>
+          <hr />
+          <h3>Não coordenado e assíncrono</h3>
+          <h3><span class="red">Agents</span></h3>
+          <h4>Pense num processo de fork/join</h4>
+        </section>
 
-        Toda função implementa Runnable
+        <section>
+          <h2>Processamento concorrente</h2>
+          <hr />
+          <h3>Coordenado e síncrono</h3>
+          <h3><span class="red">Refs</span></h3>
+          <h4>Pense numa transferência bancária</h4>
+        </section>
 
-        Per thread
+        <section>
+          <h2>STM</h2>
+          <hr />
+          <h3>Software Transactional Memory</h3>
+          <img src="images/stm.png" height="400">
+        </section>
 
-        Não coordenado e síncrono - Atoms
+        <section>
+          <h2>STM</h2>
+          <hr />
+          <h3>É como um banco de dados</h3>
+          <h3 class="fragment">... mas na memória</h3>
+        </section>
 
-        Não coordenado e assíncrono - Agents
+        <section>
+          <h2>STM</h2>
+          <hr />
+          <h3>Performance?</h3>
+          <img src="images/ok.jpg" height="400" class="fragment">
+        </section>
 
-        Coordenado e síncrono - Refs
-
-        STM - Software Transactional Memory
-
-        É como um banco de dados
-
-        ... mas na memória
-
-        Performance?
-
+        <section>
         Lazy
 
         Grandes quantidades de dados
