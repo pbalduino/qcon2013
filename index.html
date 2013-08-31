@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>QCon 2013 - Programação funcional para o mundo real com Clojure</title>
+
+    <meta name="description" content="QCon 2013 - Programação funcional para o mundo real com Clojure">
+    <meta name="author" content="Plínio Balduino">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="css/reveal.min.css">
+    <link rel="stylesheet" href="css/theme/serif.css" id="theme">
+
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/idea.css">
+
+    <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+
+    <script>
+      document.write('<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">');
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <style type="text/css">
+    .reveal pre {
+      font-size: 0.9em;
+    }
+
+    .reveal pre code {
+      overflow: visible;
+      max-height: none;
+    }
+
+    span.red {
+      color: red;
+      font-size: 1.2em;
+    }
+
+    .reveal li.grow {
+      line-height: 1.8em;
+    }
+
+    span.deleted {
+      color: #ccc;
+      text-decoration: line-through;
+    }
+
+    .reveal section img {
+      border: none;
+    }
+  </style>
+
+  <body>
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <section>
+          <h2>Programação funcional no mundo real com</h2>
+          <h1>Clo<i>j</i>ure</h1>
+          <hr />
+          <h3>QCon 2013</h3>
+          <h5>São Paulo - 30/Ago/2013</h5>
+          <hr />
+          <p>
+            <a href="http://about.me/pbalduino">Plínio Balduino</a> / <a href="http://twitter.com/p_balduino">@p_balduino</a>
+          </p>
+        </section>
+
+        <section>
+          <h2>Plínio Balduino</h2>
+          <hr />
+          <h3>A past century software developer</h3>
+          <img src="images/cover.jpeg" height="400">
+        </section>
+
+        <section>
+          <h2>Plínio Balduino</h2>
+          <hr />
+          <h3>www.casadocodigo.com.br</h3>
+          <img src="images/brendan_eich.jpg" height="400">
+        </section>
+
+        <section>
+          <h2>Programação funcional</h2>
+          <hr />
+          <h3>Alan Turing / Alonzo Church</h3>
+          <h3>década de 1930</h3>
+        </section>
+
+        <section>
+          <h2>Programação funcional</h2>
+          <hr />
+          <h3>Paradigma</h3>
+          <h3>&nbsp;</h3>
+        </section>
+
+        <section>
+          <h2>Programação funcional</h2>
+          <hr />
+          <h3><span class="deleted">Paradigma</span></h3>
+          <h3>Forma diferente de pensar</h3>
+        </section>
+
+        <section>
+          <h2>Programação funcional</h2>
+          <hr />
+          <h3>Função é a unidade básica</h3>
+        </section>
+
+        <section>
+          <h2>Linguagens funcionais</h2>
+          <hr />
+          <ul>
+            <h3>Haskell</h3>
+            <h3>LISP</h3>
+            <h3>Scala</h3>
+            <h3>JavaScript</h3>
+        </section>
+
+        <section>
+          <h2>Linguagens funcionais</h2>
+          <hr />
+          <ul>
+            <h3><span class="deleted">Haskell</span></h3>
+            <h3><span class="red">LISP</span></h3>
+            <h3><span class="deleted">Scala</span></h3>
+            <h3><span class="deleted">JavaScript</span></h3>
+        </section>
+
+        <section>
+          <h2>LISP</h2>
+          <hr />
+          <h3>Inteligência artificial</h3>
+          <img src="images/ai.jpg" height="400">
+        </section>
+        <section>
+          <h2>LISP</h2>
+          <hr />
+          <h3>Academia</h3>
+          <img src="images/beaker.jpg" height="400">
+        </section>
+        <section>
+          <h2>LISP</h2>
+          <hr />
+          <h3>Parênteses</h3>
+          <img src="images/parentheses.jpg" height="400">
+        </section>
+
+        <section>
+          <h2>Matemática</h2>
+          <hr />
+          <h3>Preciso de um mestrado?</h3>
+          <img src="images/math.gif" height="400">
+        </section>
+
+        <section>
+          <h2>Teorias, termos</h2>
+          <hr />
+          <h3>Teoria das categorias</h3>
+          <ul>
+            <li>Functors</li>
+            <li>Applicative Functors</li>
+            <li>Monoids</li>
+            <li>Monads</li>
+            <li>Arrows</li>
+            <li>Semigrupos</li>
+            <li>Comonads</li>
+          </li>
+        </section>
+
+        <section>
+          <h2>Hoje não, obrigado.</h2>
+          <hr />
+          <img src="images/no-bear.jpg" height="400">
+        </section>
+
+        <section>
+          <h2>Sejamos pragmáticos</h2>
+          <hr />
+          <h3>Problemas do mundo real</h3>
+          <p class="fragment">
+            <img src="images/money.jpg" height="400">
+          </p>
+        </section>
+        <section>
+          <h2>Lei de Moore</h2>
+          <hr />
+          <img src="images/moore.svg" height="500">
+        </section>
+
+        <section>
+          <h2>Lei de Moore</h2>
+          <hr />
+            <h3>Velocidade do processador estagnou</h3>
+            <h3>A solução?</h3>
+            <h2><span class="red">Mais núcleos</span></h2>
+
+        </section>
+
+        <section>
+
+        Servidores / Cloud / Computação distribuída
+
+        Programação paralela e concorrente
+
+        Estados mutáveis
+
+        Race Condition
+
+        Lock
+
+        Deadlock
+
+        Livelock
+
+        Código cada vez mais complexo
+
+        E agora?
+
+        Clojure!
+
+        JVM (ou CLR)
+
+        Imutabilidade
+
+        Lento?
+
+        Persistent Data Structures
+
+        Thread safe
+
+        E se eu precisar mudar?
+
+        Feito para concorrência
+
+        Toda função implementa Runnable
+
+        Per thread
+
+        Não coordenado e síncrono - Atoms
+
+        Não coordenado e assíncrono - Agents
+
+        Coordenado e síncrono - Refs
+
+        STM - Software Transactional Memory
+
+        É como um banco de dados
+
+        ... mas na memória
+
+        Performance?
+
+        Lazy
+
+        Grandes quantidades de dados
+
+        Quem usa?
+
+        JVM (ou CLR)
+
+        Simplicidade
+
+        Concorrência
+
+        Clojure
+
+      </section>
+
+      </div>
+
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.min.js"></script>
+
+    <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'fade', // default/cube/page/concave/zoom/linear/fade/none
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+          // { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+          // { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>
