@@ -340,6 +340,28 @@
         </section>
 
         <section>
+          <h2>clojure.async</h2>
+          <hr />
+          <h3>A simplicidade das <i>goroutines</i></h3>
+          <h3>Com o poder do Clojure</h3>
+        </section>
+
+        <section>
+          <h2>clojure.logic</h2>
+          <hr />
+          <h3>Programação lógica</h3>
+          <h3>Sudoku em 33 linhas</h3>
+        </section>
+
+        <section>
+          <h2>Macros</h2>
+          <hr />
+          <h3>Modifique a linguagem</h3>
+          <h3>em tempo de execução</h3>
+          <h3><span class="red">DSLs made easy</span></h3>
+        </section>
+
+        <section>
           <h2>Lazy</h2>
           <hr />
           <h3>O processamento só acontece</h3>
@@ -348,29 +370,44 @@
         </section>
 
         <section>
+          <h2>Java interop</h2>
+          <hr />
+          <h3>Você pode reutilizar <span class="red">todas</span></h3>
+          <h3>as suas bibliotecas do Java</h3>
+          <pre><code>(defn delayed-print []
+  (println "Dormiu")
+  (Thread/sleep 5000)
+  (println "Acordou"))
+
+(-> delayed-print 
+    Thread. 
+    .start)</code></pre>
+        </section>
+
+        <section>
           <h2>Quem usa?</h2>
           <hr />
           <h3><small><big>Puppet DB</big> - <small>Overtone</small> - <big>Prismatic</big> - 
-    <small>Order Harmony</small> - <small>Rocket List</small> - <big>Leeds College of Music</big> - 
-    <small>Rewryte</small> - <big>BeanStalk</big> - <small>ReadyForZero</small> - <big>Akamai</big> - 
-    <small>Appvise</small> - <small>backtype</small> - <small>Brand Karma</small> - 
-    <small>Berico</small> - <big>Citibank</big> - <small>Compass Labs</small> - <small>Factual</small> - 
-    <small>FlightCaster</small> - <small>Geni</small> - <small>Higiebus</small> - 
-    <small>Infinitely Beta</small> - <small>KamaGames</small> - <small>LeadTune</small> - 
-    <big>Max Planck Institute</big> - <small>Pico Quantitative Trading</small> - 
-    <small>Platogo</small> - <big>Relevance</big> - <small>Revelytix</small> - <small>Setere</small> - 
-    <small>Sonian</small> - <small>TheDeadline</small> - <small>Tianya (China)</small> - 
-    <small>Typewire</small> - <small>YouCanEat.at</small> - <small>WeatherBill</small> - 
-    <big>WorldSingles</big> - <small>WuSoup</small> - <small>AltLaw.org</small> - 
-    <small>Tech city map</small> - <small>Trampoline Systems</small> - <small>2minutecv</small> - 
-    <small>Nanonation</small> - <small>Cognician</small> - <small>Mastodon C</small> - 
-    <small>BTS Group</small> - <small>Planspot.com</small> - <small>Nuroko</small> - 
-    <small>Damballa</small> - <small>BigML</small> - <small>Roomkey</small> - 
-    <small>boxuk.com</small> - <small>GateProtect</small> - <small>Kontera</small> - 
-    <small>DRW</small> - <small>Two Sigma</small> - <small>Climate</small> - 
-    <small>Puppet Labs</small> - <small>Copious</small> - <big>Trend Micro</big> - 
-    <small>IOOF</small> - <big>Heroku</big> - <small>SmartBIM</small><big>Intelie</big> - 
-    <big>EO2</big> - <big>Chaordic</big> - <big>Reglare</big></small></h3>
+          <small>Order Harmony</small> - <small>Rocket List</small> - <big>Leeds College of Music</big> - 
+          <small>Rewryte</small> - <big>BeanStalk</big> - <small>ReadyForZero</small> - <big>Akamai</big> - 
+          <small>Appvise</small> - <small>backtype</small> - <small>Brand Karma</small> - 
+          <small>Berico</small> - <big>Citibank</big> - <small>Compass Labs</small> - <small>Factual</small> - 
+          <small>FlightCaster</small> - <small>Geni</small> - <small>Higiebus</small> - 
+          <small>Infinitely Beta</small> - <small>KamaGames</small> - <small>LeadTune</small> - 
+          <big>Max Planck Institute</big> - <small>Pico Quantitative Trading</small> - 
+          <small>Platogo</small> - <big>Relevance</big> - <small>Revelytix</small> - <small>Setere</small> - 
+          <small>Sonian</small> - <small>TheDeadline</small> - <small>Tianya (China)</small> - 
+          <small>Typewire</small> - <small>YouCanEat.at</small> - <small>WeatherBill</small> - 
+          <big>WorldSingles</big> - <small>WuSoup</small> - <small>AltLaw.org</small> - 
+          <small>Tech city map</small> - <small>Trampoline Systems</small> - <small>2minutecv</small> - 
+          <small>Nanonation</small> - <small>Cognician</small> - <small>Mastodon C</small> - 
+          <small>BTS Group</small> - <small>Planspot.com</small> - <small>Nuroko</small> - 
+          <small>Damballa</small> - <small>BigML</small> - <small>Roomkey</small> - 
+          <small>boxuk.com</small> - <small>GateProtect</small> - <small>Kontera</small> - 
+          <small>DRW</small> - <small>Two Sigma</small> - <small>Climate</small> - 
+          <small>Puppet Labs</small> - <small>Copious</small> - <big>Trend Micro</big> - 
+          <small>IOOF</small> - <big>Heroku</big> - <small>SmartBIM</small><big>Intelie</big> - 
+          <big>EO2</big> - <big>Chaordic</big> - <big>Reglare</big></small></h3>
         </section>
 
       <section>
