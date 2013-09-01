@@ -39,6 +39,7 @@
     .reveal pre code {
       overflow: visible;
       max-height: none;
+      font-size: 1.2em;
     }
 
     span.red {
@@ -55,6 +56,16 @@
       text-decoration: line-through;
     }
 
+    span.clojure {
+      font-size: 1.1em;
+      color: #5881d8;
+      font-family: helvetica, arial;
+    }
+
+    span.clojure i {
+      color: #63b132;
+    }
+
     .reveal section img {
       border: none;
     }
@@ -68,7 +79,7 @@
       <div class="slides">
         <section>
           <h2>Programação funcional no mundo real com</h2>
-          <h1>Clo<i>j</i>ure</h1>
+          <h1><span class="clojure">Clo<i>j</i>ure</span></h1>
           <hr />
           <h3>QCon 2013</h3>
           <h5>São Paulo - 31/Ago/2013</h5>
@@ -202,7 +213,7 @@
           <h2>Lei de Moore</h2>
           <hr />
             <h3>A solução?</h3>
-            <h2><span class="red">Mais núcleos</span></h2>
+            <h2 class="fragment"><span class="red">Mais núcleos</span></h2>
         </section>
 
         <section>
@@ -244,25 +255,25 @@
           <h2>E o código...</h2>
           <hr>
           <h3>... cada vez mais complexo</h3>
-          <h3><span class="red">E agora?</span></h3>
+          <h3 class="fragment"><span class="red">E agora?</span></h3>
           <img src="images/mess.jpg" height="400">
         </section>
 
         <section>
-          <h2>Clo<i>j</i>ure</h2>
+          <h2><span class="clojure">Clo<i>j</i>ure</span></h2>
           <hr />
           <img src="images/clojure.png" height="400">
         </section>
 
         <section>
-          <h2>Clo<i>j</i>ure</h2>
+          <h2><span class="clojure">Clo<i>j</i>ure</span></h2>
           <hr />
           <h3>Integrado à JVM ou CLR</h3>
           <img src="images/imuttant.png" height="400">
         </section>
 
         <section>
-          <h2>Clo<i>j</i>ure</h2>
+          <h2><span class="clojure">Clo<i>j</i>ure</span></h2>
           <hr />
           <h3>Sintaxe simples</h3>
           <pre><code>(operador parametro parametro)
@@ -340,17 +351,70 @@
         </section>
 
         <section>
-          <h2>clojure.async</h2>
+          <h2>Funções puras</h2>
           <hr />
-          <h3>A simplicidade das <i>goroutines</i></h3>
-          <h3>Com o poder do Clo<i>j</i>ure</h3>
+          <h3>Sem efeito colateral</h3>
+          <h3>Deterministas</h3>
+          <h3>Permitem <span class="red">memoization</span></h3>
         </section>
 
         <section>
-          <h2>clojure.logic</h2>
+          <h2>Memoization?</h2>
+          <hr />
+          <h3 class="fragment">Troca <span class="red">processamento</span> por <span class="red">memória</span></h3>
+        </section>
+
+        <section>
+          <h2>Memoization</h2>
+          <hr />
+          <pre><code>(defn fib [n]
+  (if  (or (zero? n) (= n 1)) 
+    1 
+    (+  (fib (dec n)) 
+        (fib (- n 2)))))
+ 
+(time (fib 90))
+; spent more than 30 minutes and I quit</code></pre>
+        </section>
+
+        <section>
+          <h2>Memoization</h2>
+          <hr />
+          <pre><code>(def fib-memo)
+ 
+(defn fib [n]
+  (if  (or (zero? n) (= n 1)) 
+    1 
+    (+  (fib-memo (dec n))
+        (fib-memo (- n 2))))) 
+ 
+(def fib-memo (memoize fib))
+ 
+(time (fib 90))
+; "Elapsed time: 0.058 msecs"</code></pre>
+        </section>
+
+        <section>
+          <h2>Mas e se...?</h2>
+          <hr />
+          <h3>Precisa de efeito colateral?</h3>
+          <h3>Use <span class="red">agent</span></h3>
+        </section>
+
+        <section>
+          <h2>core.async</h2>
+          <hr />
+          <h3>A simplicidade das <i>goroutines</i></h3>
+          <h3>Com o poder do <span class="clojure">Clo<i>j</i>ure</span></h3>
+          <h3 class="fragment"><span class="red">As ideias do Erlang e Go</span></h3>
+        </section>
+
+        <section>
+          <h2>core.logic</h2>
           <hr />
           <h3>Programação lógica</h3>
           <h3>Sudoku em 33 linhas</h3>
+          <h3 class="fragment"><span class="red">O poder do Prolog</span></h3>
         </section>
 
         <section>
@@ -406,8 +470,8 @@
           <small>boxuk.com</small> - <small>GateProtect</small> - <small>Kontera</small> - 
           <small>DRW</small> - <small>Two Sigma</small> - <small>Climate</small> - 
           <small>Puppet Labs</small> - <small>Copious</small> - <big>Trend Micro</big> - 
-          <small>IOOF</small> - <big>Heroku</big> - <small>SmartBIM</small><big>Intelie</big> - 
-          <big>EO2</big> - <big>Chaordic</big> - <big>Reglare</big></small></h3>
+          <small>IOOF</small> - <big>Heroku</big> - <small>SmartBIM</small> - <big>Intelie</big> - 
+          <big>EO2</big> - <big>Chaordic</big> - <big>Reglare</big> - <big>Guiato</big></small></h3>
         </section>
 
       <section>
@@ -419,7 +483,7 @@
       </section>
 
       <section>
-        <h2>Use Clo<i>j</i>ure</h2>
+        <h2>Use <span class="clojure">Clo<i>j</i>ure</span></h2>
         <hr />
         <img src="images/clojure.png" height="400">
       </section>
@@ -428,6 +492,7 @@
         <h2>(obrigado)</h2>
         <hr />
         <h3>@p_balduino</h3>
+        <h3><span class="clojure">@clj_sp</span></h3>
         <h3>http://pbalduino.github.io/qcon2013</h3>
         <img src="images/obrigado.jpg" height="400">
       </section>
@@ -465,6 +530,5 @@
       });
 
     </script>
-
   </body>
 </html>
